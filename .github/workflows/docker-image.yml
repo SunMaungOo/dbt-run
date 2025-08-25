@@ -21,12 +21,12 @@ jobs:
       run: |
         docker build -t my-app .
 
-    - name: Save Docker image to artifact (optional)
+    - name: Save Docker image to artifact
       run: |
         docker save my-app | gzip > my-app.tar.gz
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: my-app
         path: my-app.tar.gz
